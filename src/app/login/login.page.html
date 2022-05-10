@@ -1,0 +1,38 @@
+<ion-content [fullscreen]="true">
+  <ion-list lines="full" class="ion-margin">
+    <ion-grid>
+      <ion-row>
+          <ion-col size="6" offset="3">
+            <ion-img src="https://alexandrerodrigues.com/assets/images/logo-ar.png" alt="logo-image" style="padding-top:60px"></ion-img>
+          </ion-col>
+     </ion-row>
+    </ion-grid>
+    <ion-item class="ion-margin-vertical">
+      <ion-icon name="mail-outline" slot="start" color="primary"></ion-icon>
+      <ion-input placeholder="E-mail" type="email" [(ngModel)]="email" color="primary"></ion-input>
+    </ion-item>
+    <ion-item class="ion-margin-vertical">
+      <ion-icon name="lock-closed-outline" slot="start" color="primary"></ion-icon>
+      <ion-input placeholder="Senha" type="password" [(ngModel)]="password" color="primary"></ion-input>
+    </ion-item>
+    <ion-row class="ion-margin-bottom">
+      <ion-col size="6" class="alignItems">
+        <div align="left">
+          <ion-icon *ngIf="staySignedIn" name="checkmark-circle-outline" color="primary" (click)="changeStatus(false)"></ion-icon>
+          <ion-icon *ngIf="!staySignedIn" name="close-circle-outline" color="danger" (click)="changeStatus(true)"></ion-icon>
+          <ion-note>Remember me</ion-note>
+        </div>
+      </ion-col>
+      <ion-col size="6" class="alignItems">
+        <div align="right"><ion-note color="primary">Esqueceu a senha?</ion-note></div>
+      </ion-col>
+    </ion-row>
+    <ion-button color="primary" expand="block" size="large" (click)="login()">Entrar</ion-button>
+    <ion-text class="ion-text-center">
+      <p>
+        <ion-note>Não tem registro? </ion-note>
+    <ion-text color="primary" (click)="formRegister()">Registrar-se</ion-text>
+      </p>
+    </ion-text>
+  </ion-list>
+</ion-content>
